@@ -1,5 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build:client",
+  "installCommand": "npm install",
   "outputDirectory": "dist/spa",
   "framework": "vite",
   "rewrites": [
