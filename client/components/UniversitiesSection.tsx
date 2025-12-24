@@ -75,7 +75,7 @@ export function UniversitiesSection() {
 
         <div className="text-center mt-12">
           <p className="text-[#828282]">
-            Join thousands of students from 60+ countries who trust Bthreesolutions for their academic success
+            Join thousands of students from 60+ countries who trust Bthreeesolutions for their academic success
           </p>
         </div>
       </div>

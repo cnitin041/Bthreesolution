@@ -1,15 +1,6 @@
-import { Link } from "react-router-dom";
-import servicesData from "@/data/services.json";
+import { MessageSquare } from "lucide-react";
 
 export function SubjectsSection() {
-  // Create a map for quick lookup
-  const serviceMap = new Map(
-    servicesData.map((service) => [
-      service.title.toLowerCase(),
-      service.id
-    ])
-  );
-
   const subjects = [
     "Essay Writing",
     "Dissertation Help",
@@ -41,6 +32,12 @@ export function SubjectsSection() {
     "Political Science",
   ];
 
+  const handleSubjectClick = (subject: string) => {
+    const message = `Hi, I need help with ${subject}. Can you please provide more information?`;
+    const whatsappUrl = `https://wa.me/919587056755?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0F0F0F]">
       <div className="max-w-7xl mx-auto">
@@ -57,26 +54,17 @@ export function SubjectsSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {subjects.map((subject, index) => {
-            const serviceId = serviceMap.get(subject.toLowerCase());
-            const content = (
-              <div className="group bg-[#1a1a1a] py-6 px-4 rounded-xl border-2 border-[#333333] hover:border-[#FEFEFE] transition-all duration-300 shadow-sm hover:shadow-xl text-center cursor-pointer">
-                <p className="text-[#FEFEFE] font-bold text-sm md:text-base group-hover:text-[#FEFEFE]">
-                  {subject}
-                </p>
-              </div>
-            );
-
-            return serviceId ? (
-              <Link key={index} to={`/services/${serviceId}`}>
-                {content}
-              </Link>
-            ) : (
-              <div key={index}>
-                {content}
-              </div>
-            );
-          })}
+          {subjects.map((subject, index) => (
+            <button
+              key={index}
+              onClick={() => handleSubjectClick(subject)}
+              className="group bg-[#1a1a1a] py-6 px-4 rounded-xl border-2 border-[#333333] hover:border-[#FEFEFE] transition-all duration-300 shadow-sm hover:shadow-xl text-center cursor-pointer"
+            >
+              <p className="text-[#FEFEFE] font-bold text-sm md:text-base group-hover:text-[#FEFEFE]">
+                {subject}
+              </p>
+            </button>
+          ))}
         </div>
 
         <div className="text-center mt-12 space-y-6">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Header } from "@/components/Header";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
@@ -18,6 +18,10 @@ import {
   Phone,
   MapPin,
   Star,
+  DollarSign,
+  Lock,
+  FileCheck,
+  MessageSquare,
 } from "lucide-react";
 
 export default function Index() {
@@ -29,6 +33,80 @@ export default function Index() {
       servicesSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Counter Animation Hook
+  const useCountUp = (end: number, duration: number = 2000, isVisible: boolean) => {
+    const [count, setCount] = useState(0);
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+      if (!isVisible || hasAnimated) return;
+
+      setHasAnimated(true);
+      let startTime: number | null = null;
+      const startValue = 0;
+
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const currentCount = Math.floor(easeOutQuart * (end - startValue) + startValue);
+        
+        setCount(currentCount);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setCount(end);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }, [isVisible, end, duration, hasAnimated]);
+
+    return count;
+  };
+
+  // Intersection Observer Hook
+  const useInView = () => {
+    const [isInView, setIsInView] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, []);
+
+    return { ref, isInView };
+  };
+
+  const { ref: statsRef, isInView: statsInView } = useInView();
+
+  // Stats data with target numbers
+  const stats = [
+    { target: 45000, suffix: "+", label: "Assignments Completed" },
+    { target: 15000, suffix: "+", label: "Students Trusted Us" },
+    { target: 60, suffix: "+", label: "Countries Serving" },
+    { target: 100, suffix: "+", label: "Professional Experts" },
+  ];
 
   return (
     <div className="min-h-screen bg-[#FEFEFE] text-[#0F0F0F]">
@@ -85,6 +163,83 @@ export default function Index() {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-[#0F0F0F]/10 to-transparent"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Promotional Widgets */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#FEFEFE]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Widget 1 - B2B Partner */}
+            <div className="relative bg-[#FEFEFE] rounded-2xl shadow-lg border-2 border-[#E0E0E0] overflow-hidden hover:shadow-xl transition-all hover:border-[#0F0F0F]">
+              <div className="grid md:grid-cols-2 gap-6 p-8 items-center">
+                <div className="flex justify-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=350&fit=crop"
+                    alt="B2B Partner - Student with books"
+                    className="w-48 h-56 object-cover rounded-lg shadow-md"
+                  />
+                </div>
+                <div className="space-y-6 relative">
+                  <div className="w-12 h-12 rounded-full border-4 border-[#0F0F0F] flex items-center justify-center">
+                    <div className="w-6 h-6 rounded-full bg-[#0F0F0F]"></div>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-black text-[#0F0F0F] leading-tight">
+                    Earn Commission more than 30% and become our B2B Partner.
+                  </h3>
+                  <a
+                    href="https://wa.me/919587056755?text=I%20want%20to%20become%20a%20B2B%20Partner"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#0F0F0F] hover:bg-[#828282] text-[#FEFEFE] font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    Join Now
+                  </a>
+                </div>
+              </div>
+              {/* Decorative dots */}
+              <div className="absolute bottom-4 right-4 grid grid-cols-3 gap-1.5 opacity-30">
+                {[...Array(9)].map((_, i) => (
+                  <div key={i} className="w-2 h-2 rounded-full bg-[#0F0F0F]"></div>
+                ))}
+              </div>
+            </div>
+
+            {/* Widget 2 - Services Offered */}
+            <div className="relative bg-[#FEFEFE] rounded-2xl shadow-lg border-2 border-[#E0E0E0] overflow-hidden hover:shadow-xl transition-all hover:border-[#0F0F0F]">
+              <div className="grid md:grid-cols-2 gap-6 p-8 items-center">
+                <div className="space-y-6 relative">
+                  <div className="w-12 h-12 rounded-full border-4 border-[#0F0F0F] flex items-center justify-center">
+                    <div className="w-6 h-6 rounded-full bg-[#0F0F0F]"></div>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-black text-[#0F0F0F] leading-tight">
+                    AMA helps you with Dissertation, Essay Report, Assignment Writing, CV, Exam, SOP etc.
+                  </h3>
+                  <button
+                    onClick={() => setIsContactDialogOpen(true)}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#0F0F0F] hover:bg-[#828282] text-[#FEFEFE] font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    Chat Now
+                  </button>
+                </div>
+                <div className="flex justify-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=350&fit=crop"
+                    alt="Student Success - Graduate with books"
+                    className="w-48 h-56 object-cover rounded-lg shadow-md"
+                  />
+                </div>
+              </div>
+              {/* Decorative dots */}
+              <div className="absolute top-4 right-4 grid grid-cols-3 gap-1.5 opacity-30">
+                {[...Array(9)].map((_, i) => (
+                  <div key={i} className="w-2 h-2 rounded-full bg-[#0F0F0F]"></div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -160,28 +315,27 @@ export default function Index() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0F0F0F] text-[#FEFEFE]">
+      <section ref={statsRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0F0F0F] text-[#FEFEFE]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12">
-            {
-              [
-                { number: "45,000+", label: "Assignments Completed" },
-                { number: "15,000+", label: "Students Trusted Us" },
-                { number: "60+", label: "Countries Serving" },
-                { number: "100+", label: "Professional Experts" },
-              ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="text-center space-y-3 border-l border-[#828282] pl-6 md:border-l-0 md:pl-0"
-              >
-                <div className="text-5xl md:text-6xl font-black text-[#828282]">
-                  {stat.number}
+            {stats.map((stat, idx) => {
+              const count = useCountUp(stat.target, 2000, statsInView);
+              const formattedCount = count.toLocaleString();
+              
+              return (
+                <div
+                  key={idx}
+                  className="text-center space-y-3 border-l border-[#828282] pl-6 md:border-l-0 md:pl-0"
+                >
+                  <div className="text-5xl md:text-6xl font-black text-[#828282]">
+                    {formattedCount}{stat.suffix}
+                  </div>
+                  <p className="text-[#828282] text-sm uppercase tracking-wider font-semibold">
+                    {stat.label}
+                  </p>
                 </div>
-                <p className="text-[#828282] text-sm uppercase tracking-wider font-semibold">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -248,6 +402,93 @@ export default function Index() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Commitment Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F5F5F5]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <p className="text-[#828282] font-semibold text-xs uppercase tracking-widest mb-3">
+              Commitment
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-[#0F0F0F]">
+              Our Students are guaranteed by the following assurance:
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Left Column - 4 Guarantees */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: DollarSign,
+                  title: "Guaranteed Money Return",
+                  description: "Any kind of unreached promises would be reimbursed as per our moneyback policy.",
+                },
+                {
+                  icon: Lock,
+                  title: "Confidentiality",
+                  description: "Our policies are strictly made to not disclose the identity of our students.",
+                },
+                {
+                  icon: FileCheck,
+                  title: "Original Content",
+                  description: "We have a very strict rule about plagiarism, and we ensure to deliver original content. Every delivered assignment goes through the best plagiarism software for the content authentication.",
+                },
+                {
+                  icon: MessageSquare,
+                  title: "Feedback Facilities",
+                  description: "Any unmet requirement in the assignment will be taken back for recheck and edit for your convenience.",
+                },
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="bg-[#FEFEFE] p-6 rounded-xl border-2 border-[#E0E0E0] hover:border-[#0F0F0F] transition-all group hover:shadow-lg">
+                    <div className="mb-4">
+                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-[#F5F5F5] group-hover:bg-[#0F0F0F] transition-colors border border-[#E0E0E0]">
+                        <Icon className="w-7 h-7 text-[#0F0F0F] group-hover:text-[#FEFEFE] transition-colors" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-black text-[#0F0F0F] mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-[#828282] text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Right Column - Circular Stats */}
+            <div className="flex items-center justify-center">
+              <div className="relative w-full max-w-md aspect-square">
+                <div className="absolute inset-0 rounded-full bg-[#0F0F0F]">
+                  <div className="flex flex-col items-center justify-center h-full text-center text-[#FEFEFE] p-12">
+                    <div className="space-y-8">
+                      <div>
+                        <div className="text-6xl md:text-7xl font-black mb-2">
+                          97.68%
+                        </div>
+                        <p className="text-lg md:text-xl font-semibold">
+                          of orders are<br />delivered on time
+                        </p>
+                      </div>
+                      <div className="border-t-2 border-[#828282]/30 pt-8">
+                        <div className="text-5xl md:text-6xl font-black mb-2">
+                          9.5/10
+                        </div>
+                        <p className="text-lg md:text-xl font-semibold">
+                          customer satisfaction<br />rate
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

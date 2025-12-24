@@ -83,7 +83,7 @@ export function ContactFormDialog({ open, onOpenChange }: ContactFormDialogProps
       <DialogContent className="sm:max-w-[500px] bg-[#FEFEFE]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-black text-[#0F0F0F]">
-            Get Assignment Help from Bthreesolutions
+            Get Assignment Help from Bthreeesolutions
           </DialogTitle>
           <DialogDescription className="text-[#828282]">
             Fill out the form below and we'll get back to you within 24 hours.

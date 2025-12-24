@@ -34,11 +34,16 @@ export function Header({ onGetStartedClick }: HeaderProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img
-              src="/assets/logo-small.jpg"
-              alt="Bthreesolutions Logo"
-              className="h-10 w-auto object-contain"
-            />
+            <div className="flex flex-col items-start">
+              <img
+                src="/assets/logo-small.jpg"
+                alt="Bthreesolutions Logo"
+                className="h-10 w-auto object-contain"
+              />
+              <span className="text-[#FEFEFE] text-xs font-bold tracking-wide mt-0.5">
+                Bthreeesolutions
+              </span>
+            </div>
           </Link>
 
           {/* Navigation */}

@@ -37,7 +37,7 @@ export function UniversitySlider() {
                   <img
                     src={uni.logo}
                     alt={`${uni.name} logo`}
-                    className="h-16 mx-auto object-contain"
+                    className="h-20 mx-auto object-contain"
                     onError={(e) => {
                       // Handle image loading errors by hiding the image and showing the university name
                       const target = e.target as HTMLImageElement;
@@ -46,7 +46,7 @@ export function UniversitySlider() {
                       const parent = target.parentElement;
                       if (parent) {
                         const fallbackDiv = document.createElement('div');
-                        fallbackDiv.className = "h-16 flex items-center justify-center";
+                        fallbackDiv.className = "h-20 flex items-center justify-center";
                         fallbackDiv.innerHTML = `<span class="text-sm font-semibold text-[#0F0F0F]">${uni.name}</span>`;
                         parent.appendChild(fallbackDiv);
                       }
@@ -68,7 +68,7 @@ export function UniversitySlider() {
                   <img
                     src={uni.logo}
                     alt={`${uni.name} logo`}
-                    className="h-16 mx-auto object-contain"
+                    className="h-20 mx-auto object-contain"
                     onError={(e) => {
                       // Handle image loading errors by hiding the image and showing the university name
                       const target = e.target as HTMLImageElement;
@@ -77,7 +77,7 @@ export function UniversitySlider() {
                       const parent = target.parentElement;
                       if (parent) {
                         const fallbackDiv = document.createElement('div');
-                        fallbackDiv.className = "h-16 flex items-center justify-center";
+                        fallbackDiv.className = "h-20 flex items-center justify-center";
                         fallbackDiv.innerHTML = `<span class="text-sm font-semibold text-[#0F0F0F]">${uni.name}</span>`;
                         parent.appendChild(fallbackDiv);
                       }
@@ -103,7 +103,7 @@ export function UniversitySlider() {
           }
           
           .animate-scroll {
-            animation: scroll 30s linear infinite;
+            animation: scroll 10s linear infinite;
           }
           
           .animate-scroll:hover {
