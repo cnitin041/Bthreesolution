@@ -22,6 +22,9 @@ import {
   Lock,
   FileCheck,
   MessageSquare,
+  Instagram,
+  Facebook,
+  Linkedin,
 } from "lucide-react";
 
 export default function Index() {
@@ -726,96 +729,71 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0F0F0F] text-[#FEFEFE] py-16 px-4 sm:px-6 lg:px-8 border-t border-[#282828]">
+      <footer className="bg-[#0F0F0F] text-[#FEFEFE] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
-            {/* Logo Section */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
+            {/* Logo & Description */}
+            <div className="space-y-6">
+              <div className="flex flex-col items-start gap-2">
                 <img
-                  src="/assets/logo.jpg"
-                  alt="B3 Logo"
-                  className="footer-logo"
+                  src="/assets/logo-small.jpg"
+                  alt="Bthreesolutions Logo"
+                  className="h-16 w-auto object-contain"
                 />
+                <p className="text-xs font-bold text-[#FEFEFE]">
+                  easy, we got your back.
+                </p>
+              </div>
+              <p className="text-sm text-[#828282] leading-relaxed">
+                Bthreesolutions aims to provide affordable academic writing assistance to students worldwide, ensuring high-quality service at prices that align with our established criteria.
+              </p>
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#0F0F0F] hover:bg-[#828282] text-[#FEFEFE] rounded-lg flex items-center justify-center transition-colors"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://wa.me/919587056755"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#0F0F0F] hover:bg-[#828282] text-[#FEFEFE] rounded-lg flex items-center justify-center transition-colors"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#0F0F0F] hover:bg-[#828282] text-[#FEFEFE] rounded-lg flex items-center justify-center transition-colors"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#0F0F0F] hover:bg-[#828282] text-[#FEFEFE] rounded-lg flex items-center justify-center transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </div>
             </div>
 
-            {/* Services */}
+            {/* Company Links */}
             <div className="space-y-4">
-              <h4 className="font-black text-[#FEFEFE] uppercase text-sm tracking-widest">
-                SERVICES
+              <h4 className="font-black text-[#FEFEFE] text-base uppercase tracking-wider mb-4">
+                Company
               </h4>
-              <ul className="space-y-2 text-sm text-[#828282]">
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
-                  >
-                    Essay Writing
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
-                  >
-                    Assignment Help
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
-                  >
-                    SOP & Exam Help
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div className="space-y-4">
-              <h4 className="font-black text-[#FEFEFE] uppercase text-sm tracking-widest">
-                COMPANY
-              </h4>
-              <ul className="space-y-2 text-sm text-[#828282]">
-                <li>
-                  <a
-                    href="#why"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
-                  >
-                    Our Work
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Quick Links */}
-            <div className="space-y-4">
-              <h4 className="font-black text-[#FEFEFE] uppercase text-sm tracking-widest">
-                QUICK LINKS
-              </h4>
-              <ul className="space-y-2 text-sm text-[#828282]">
+              <ul className="space-y-3 text-sm">
                 <li>
                   <a
                     href="#home"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
+                    className="text-[#828282] hover:text-[#FEFEFE] transition-colors font-medium"
                   >
                     Home
                   </a>
@@ -823,24 +801,110 @@ export default function Index() {
                 <li>
                   <a
                     href="#why"
-                    className="hover:text-[#FEFEFE] transition-colors font-medium"
+                    className="text-[#828282] hover:text-[#FEFEFE] transition-colors font-medium"
                   >
-                    Why Us
+                    About Us
                   </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => setIsContactDialogOpen(true)}
-                    className="hover:text-[#FEFEFE] transition-colors font-medium text-left"
+                  <a
+                    href="#services"
+                    className="text-[#828282] hover:text-[#FEFEFE] transition-colors font-medium"
                   >
-                    Get Started
-                  </button>
+                    Our Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className="text-[#828282] hover:text-[#FEFEFE] transition-colors font-medium"
+                  >
+                    Assignment Service
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#why"
+                    className="text-[#828282] hover:text-[#FEFEFE] transition-colors font-medium"
+                  >
+                    How We Work
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-[#828282] hover:text-[#FEFEFE] transition-colors font-medium"
+                  >
+                    Contact Us
+                  </a>
                 </li>
               </ul>
             </div>
+
+            {/* Address & Contact */}
+            <div className="space-y-4">
+              <h4 className="font-black text-[#FEFEFE] text-base uppercase tracking-wider mb-4">
+                Address
+              </h4>
+              <div className="space-y-2 text-sm">
+                <p className="text-[#828282] font-medium leading-relaxed">
+                  P-244, 1st Floor, Pratap's Building,<br />
+                  Near Nagpal Medical Tilak Nagar,<br />
+                  Rajasthan 302004
+                </p>
+              </div>
+              <div className="mt-6">
+                <h5 className="font-black text-[#FEFEFE] text-sm uppercase tracking-wider mb-3">
+                  Contact Us
+                </h5>
+                <div className="space-y-2 text-sm">
+                  <p className="text-[#828282] font-medium">+91 8527038716</p>
+                  <p className="text-[#828282] font-medium">+91 8318072128</p>
+                </div>
+              </div>
+              <div className="mt-6">
+                <h5 className="font-black text-[#FEFEFE] text-sm uppercase tracking-wider mb-3">
+                  Email
+                </h5>
+                <p className="text-sm text-[#828282]">bthreesolutions@gmail.com</p>
+              </div>
+              <div className="mt-6">
+                <h5 className="font-black text-[#FEFEFE] text-sm uppercase tracking-wider mb-3">
+                  Website
+                </h5>
+                <a href="https://www.bthreesolutions.com" className="text-sm text-[#828282] hover:text-[#FEFEFE] transition-colors">
+                  www.bthreesolutions.com
+                </a>
+              </div>
+            </div>
+
+            {/* Best in Countries */}
+            <div className="space-y-4">
+              <h4 className="font-black text-[#FEFEFE] text-base uppercase tracking-wider mb-4">
+                Best in countries
+              </h4>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <ul className="space-y-2">
+                  <li className="text-[#828282] font-medium">USA</li>
+                  <li className="text-[#828282] font-medium">Germany</li>
+                  <li className="text-[#828282] font-medium">Australia</li>
+                </ul>
+                <ul className="space-y-2">
+                  <li className="text-[#828282] font-medium">UK</li>
+                  <li className="text-[#828282] font-medium">Canada</li>
+                  <li className="text-[#828282] font-medium">India</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="border-t border-[#282828] pt-8 text-center text-sm text-[#828282]">
-            <p>&copy; 2025 Bthreesolutions. All rights reserved.</p>
+
+          {/* Bottom Bar */}
+          <div className="border-t-2 border-[#282828] pt-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+              <p className="text-[#828282]">
+                Bthreeesolutions © 2025 All Rights Reserved
+              </p>
+            </div>
           </div>
         </div>
       </footer>
