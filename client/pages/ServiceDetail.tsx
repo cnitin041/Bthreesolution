@@ -286,7 +286,7 @@ export default function ServiceDetail() {
             </div>
           </div>
           <div className="border-t border-[#282828] pt-8 text-center text-sm text-[#828282]">
-            <p>&copy; 2025 Bthreesolutions. All rights reserved.</p>
+            <p>&copy; 2025 Bthreeesolutions. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -20,7 +20,7 @@ export function UniversitySlider() {
             Trusted by Students from Top Universities
           </h2>
           <p className="text-[#828282] text-lg max-w-2xl mx-auto">
-            Join thousands of students from prestigious institutions who trust Bthreesolutions for their academic success
+            Join thousands of students from prestigious institutions who trust Bthreeesolutions for their academic success
           </p>
         </div>
 

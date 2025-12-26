@@ -17,7 +17,7 @@ export const handleContact: RequestHandler = async (req, res) => {
     }
 
     // Email configuration
-    const recipientEmail = "bthreesolutions@gmail.com";
+    const recipientEmail = "Bthreeesolutions@gmail.com";
 
     // Create email transporter
     // For production, use environment variables for credentials
@@ -55,7 +55,7 @@ export const handleContact: RequestHandler = async (req, res) => {
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #E0E0E0; color: #828282; font-size: 12px;">
-            <p>This inquiry was sent from the Bthreesolutions assignment help contact form.</p>
+            <p>This inquiry was sent from the Bthreeesolutions assignment help contact form.</p>
           </div>
         </div>
       `,

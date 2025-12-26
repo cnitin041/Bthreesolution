@@ -129,7 +129,7 @@ export default function Index() {
           <div className="space-y-6 py-12">
             <div className="space-y-4">
               <p className="text-[#828282] font-semibold text-xs uppercase tracking-widest">
-                Welcome to Bthreesolutions
+                Welcome to Bthreeesolutions
               </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#0F0F0F]">
                 Best Assignment Help Service
@@ -161,7 +161,7 @@ export default function Index() {
           {/* Hero Image */}
           <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop"
+              src="https://media.istockphoto.com/id/1587713852/photo/happy-female-student-positive-female-student-brazilian-or-hispanic-nationality-with-a.jpg?s=612x612&w=0&k=20&c=X5i4pC9L_SzBak8hJmTVAfvJyXPeDAWRdfJkNJlRuZ4="
               alt="Assignment Help"
               className="w-full h-full object-cover"
             />
@@ -179,7 +179,7 @@ export default function Index() {
               <div className="grid md:grid-cols-2 gap-6 p-8 items-center">
                 <div className="flex justify-center">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=350&fit=crop"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuUrmLox9hCTsVzgu6305sQbgiavCwWMf3aA&s"
                     alt="B2B Partner - Student with books"
                     className="w-48 h-56 object-cover rounded-lg shadow-md"
                   />
@@ -218,7 +218,7 @@ export default function Index() {
                     <div className="w-6 h-6 rounded-full bg-[#0F0F0F]"></div>
                   </div>
                   <h3 className="text-xl md:text-2xl font-black text-[#0F0F0F] leading-tight">
-                    AMA helps you with Dissertation, Essay Report, Assignment Writing, CV, Exam, SOP etc.
+                    Bthreeesolutions helps you with Dissertation, Essay Report, Assignment Writing, CV, Exam, SOP etc.
                   </h3>
                   <button
                     onClick={() => setIsContactDialogOpen(true)}
@@ -470,7 +470,7 @@ export default function Index() {
               <div className="relative w-full max-w-md aspect-square">
                 <div className="absolute inset-0 rounded-full bg-[#0F0F0F]">
                   <div className="flex flex-col items-center justify-center h-full text-center text-[#FEFEFE] p-12">
-                    <div className="space-y-8">
+                    <div className="space-y-9">
                       <div>
                         <div className="text-6xl md:text-7xl font-black mb-2">
                           97.68%
@@ -515,7 +515,7 @@ export default function Index() {
               {
                 name: "Shefat Jamil",
                 company: "International Student",
-                text: "Got great services from Bthreesolutions and teams.. Keep doing good work!",
+                text: "Got great services from Bthreeesolutions and teams.. Keep doing good work!",
                 image:
                   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
               },
@@ -615,7 +615,7 @@ export default function Index() {
                 description:
                   "Receive your completed assignment and request revisions if needed.",
                 image:
-                  "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=400&h=300&fit=crop",
+                  "https://www.mccombstudents.com/wp-content/uploads/2025/01/Revision-Tips-and-Tricks.webp",
               },
             ].map((item, idx) => (
               <div key={idx} className="text-center group">
@@ -680,7 +680,7 @@ export default function Index() {
               Get In Touch
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-[#0F0F0F]">
-              Contact Bthreesolutions
+              Contact Bthreeesolutions
             </h2>
           </div>
 
@@ -689,8 +689,8 @@ export default function Index() {
               {
                 icon: Mail,
                 title: "Email",
-                content: "bthreesolutions@gmail.com",
-                href: "mailto:bthreesolutions@gmail.com",
+                content: "Bthreeesolutions@gmail.com",
+                href: "mailto:Bthreeesolutions@gmail.com",
               },
               {
                 icon: Phone,
@@ -737,7 +737,7 @@ export default function Index() {
               <div className="flex flex-col items-start gap-2">
                 <img
                   src="/assets/logo-small.jpg"
-                  alt="Bthreesolutions Logo"
+                  alt="Bthreeesolutions Logo"
                   className="h-16 w-auto object-contain"
                 />
                 <p className="text-xs font-bold text-[#FEFEFE]">
@@ -745,7 +745,7 @@ export default function Index() {
                 </p>
               </div>
               <p className="text-sm text-[#828282] leading-relaxed">
-                Bthreesolutions aims to provide affordable academic writing assistance to students worldwide, ensuring high-quality service at prices that align with our established criteria.
+                Bthreeesolutions aims to provide affordable academic writing assistance to students worldwide, ensuring high-quality service at prices that align with our established criteria.
               </p>
               {/* Social Icons */}
               <div className="flex items-center gap-3">
@@ -858,22 +858,22 @@ export default function Index() {
                   Contact Us
                 </h5>
                 <div className="space-y-2 text-sm">
-                  <p className="text-[#828282] font-medium">+91 8527038716</p>
-                  <p className="text-[#828282] font-medium">+91 8318072128</p>
+                  <p className="text-[#828282] font-medium">+91 9587056755</p>
+                  <p className="text-[#828282] font-medium">+91 8619272199</p>
                 </div>
               </div>
               <div className="mt-6">
                 <h5 className="font-black text-[#FEFEFE] text-sm uppercase tracking-wider mb-3">
                   Email
                 </h5>
-                <p className="text-sm text-[#828282]">bthreesolutions@gmail.com</p>
+                <p className="text-sm text-[#828282]">bthreeesolutions@gmail.com</p>
               </div>
               <div className="mt-6">
                 <h5 className="font-black text-[#FEFEFE] text-sm uppercase tracking-wider mb-3">
                   Website
                 </h5>
-                <a href="https://www.bthreesolutions.com" className="text-sm text-[#828282] hover:text-[#FEFEFE] transition-colors">
-                  www.bthreesolutions.com
+                <a href="https://www.Bthreeesolutions.com" className="text-sm text-[#828282] hover:text-[#FEFEFE] transition-colors">
+                  www.Bthreeesolutions.com
                 </a>
               </div>
             </div>

@@ -50,7 +50,7 @@ export function FAQSection() {
     {
       question: "What should I look for in a good assignment help service?",
       answer:
-        "Look for experienced academic writers with advanced degrees, proven track record of student success, transparent pricing, clear communication, revision policy, on-time delivery, plagiarism-free guarantees, and positive student reviews. At Bthreesolutions, we pride ourselves on meeting all these criteria and maintaining long-term relationships with our students.",
+        "Look for experienced academic writers with advanced degrees, proven track record of student success, transparent pricing, clear communication, revision policy, on-time delivery, plagiarism-free guarantees, and positive student reviews. At Bthreeesolutions, we pride ourselves on meeting all these criteria and maintaining long-term relationships with our students.",
     },
     {
       question: "Will I get SEO-optimized content?",

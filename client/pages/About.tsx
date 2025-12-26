@@ -7,7 +7,7 @@ export default function About() {
       <Header />
       <div className="max-w-4xl mx-auto px-4 py-20 space-y-8">
         <div className="text-center space-y-6">
-          <h1 className="text-4xl font-bold">About Bthreesolutions</h1>
+          <h1 className="text-4xl font-bold">About Bthreeesolutions</h1>
           <p className="text-muted-foreground text-lg">
             Your trusted partner for academic success
           </p>
@@ -15,7 +15,7 @@ export default function About() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-muted-foreground leading-relaxed">
-            At <strong>Bthreesolutions</strong>, we are dedicated to helping students achieve academic excellence through 
+            At <strong>Bthreeesolutions</strong>, we are dedicated to helping students achieve academic excellence through 
             professional assignment help services. With over 10 years of experience in the education sector, 
             we have assisted more than 30,000 students worldwide in reaching their academic goals.
           </p>

@@ -6,7 +6,7 @@ export default function Contact() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-8">
-        <h1 className="text-4xl font-bold">Contact Bthreesolutions</h1>
+        <h1 className="text-4xl font-bold">Contact Bthreeesolutions</h1>
         <p className="text-muted-foreground text-lg">
           Get in touch with our assignment help experts. We're here to assist you 24/7.
         </p>
@@ -17,10 +17,10 @@ export default function Contact() {
             <p className="flex items-center justify-center gap-3">
               <span className="text-primary">📧</span>
               <a
-                href="mailto:bthreesolutions@gmail.com"
+                href="mailto:Bthreeesolutions@gmail.com"
                 className="text-primary hover:underline font-medium"
               >
-                bthreesolutions@gmail.com
+                Bthreeesolutions@gmail.com
               </a>
             </p>
             <p className="flex items-center justify-center gap-3">
